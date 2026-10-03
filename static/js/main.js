@@ -181,7 +181,7 @@
   // section titles drift sideways as they pass
   $$('.sec-head').forEach((head, i) => {
     const dir = i % 2 ? 1 : -1;
-    link(head, (p) => { head.style.transform = `translate3d(${((p - 0.5) * 90 * dir).toFixed(1)}px,0,0)`; });
+    link(head, (p) => { head.style.transform = `translate3d(${((p - 0.5) * 40 * dir).toFixed(1)}px,0,0)`; });
   });
 
   // pictures slide inside their frames
@@ -270,7 +270,7 @@
     const y = window.scrollY;
     const velocity = Math.abs(y - prevY) / Math.max(dt, 0.001);
     prevY = y;
-    boost += (Math.min(velocity / 350, 7) - boost) * 0.08;
+    boost += (Math.min(velocity / 2000, 0.6) - boost) * 0.08;
 
     marquees.forEach((m) => {
       if (!m.w) return;
